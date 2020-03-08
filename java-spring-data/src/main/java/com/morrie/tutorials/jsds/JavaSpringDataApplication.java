@@ -1,4 +1,4 @@
-package com.morrie.tutorials.jsd;
+package com.morrie.tutorials.jsds;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
