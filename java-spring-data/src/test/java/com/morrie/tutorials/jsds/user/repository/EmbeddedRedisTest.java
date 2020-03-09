@@ -19,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmbeddedRedisTest {
     @Autowired
     private UserPointRedisRepository userPointRedisRepository;
@@ -29,9 +30,9 @@ public class EmbeddedRedisTest {
     }
 
     @Test
-    public void 기본_등록_조회기능() {
+    public void save_and_find_userPoint() {
         //given
-        String id = "testUser";
+        String id = "testUser1";
         LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);
         UserPoint point = UserPoint.builder()
                 .id(id)
@@ -44,8 +45,57 @@ public class EmbeddedRedisTest {
 
         //then
         UserPoint savedUserPoint = userPointRedisRepository.findById(id).get();
-        log.debug(savedUserPoint.getId());
+        log.debug("[register_and_search_userPoint] savedUserPoint id : {}, amount : {}, refreshTime : {}", savedUserPoint.getId(), savedUserPoint.getAmount(), savedUserPoint.getRefreshTime());
+
         assertThat(savedUserPoint.getAmount()).isEqualTo(1000L);
         assertThat(savedUserPoint.getRefreshTime()).isEqualTo(refreshTime);
+    }
+
+    @Test
+    public void update_userPoint() {
+        //given
+        String id = "testUser2";
+        LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);
+        userPointRedisRepository.save(UserPoint.builder()
+                .id(id)
+                .amount(1000L)
+                .refreshTime(refreshTime)
+                .build());
+
+        //when
+        UserPoint savedUserPoint = userPointRedisRepository.findById(id).get();
+        log.debug("[modify_userPoint] savedUserPoint id : {}, amount : {}, refreshTime : {}", savedUserPoint.getId(), savedUserPoint.getAmount(), savedUserPoint.getRefreshTime());
+
+        savedUserPoint.refresh(2000L, LocalDateTime.of(2020, 9, 1, 0, 0));
+        userPointRedisRepository.save(savedUserPoint);
+
+        //then
+        UserPoint refreshPoint = userPointRedisRepository.findById(id).get();
+        log.debug("[modify_userPoint] refreshPoint id : {}, amount : {}, refreshTime : {}", refreshPoint.getId(), refreshPoint.getAmount(), refreshPoint.getRefreshTime());
+
+        assertThat(refreshPoint.getAmount()).isEqualTo(2000L);
+    }
+
+    @Test
+    public void delete_userPoint() {
+        //given
+        String id = "testUser3";
+        LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);
+        UserPoint savedUserPoint = userPointRedisRepository.save(UserPoint.builder()
+                .id(id)
+                .amount(1000L)
+                .refreshTime(refreshTime)
+                .build());
+
+        log.debug("[delete_userPoint] savedUserPoint id : {}, amount : {}, refreshTime : {}", savedUserPoint.getId(), savedUserPoint.getAmount(), savedUserPoint.getRefreshTime());
+
+        //when
+        userPointRedisRepository.deleteById(id);
+
+        //then
+        boolean isValue = userPointRedisRepository.findById(id).isPresent();
+        log.debug("[delete_userPoint] isValue : {}", isValue);
+
+        assertThat(isValue).isEqualTo(false);
     }
 }
