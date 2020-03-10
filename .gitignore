@@ -31,3 +31,5 @@ logs/
 
 ### VS Code ###
 .vscode/
+java-spring-data/src/main/resources/.DS_Store
+java-spring-data/src/main/.DS_Store
