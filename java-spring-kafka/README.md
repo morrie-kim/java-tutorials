@@ -2,6 +2,10 @@
 
 Docker를 이용한 Java Spring 기반의 Zookeeper, Kafka 설치 및 실행 Guide
 
+## Module 환경 구성
+- Java 11(OpenJDK 11)
+
+
 ## Docker 설치
 
 ### Mac 에 Docker 설치
