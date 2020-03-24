@@ -19,8 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class EmbeddedRedisTest {
+public class UserPointRedisRepositoryTest {
     @Autowired
     private UserPointRedisRepository userPointRedisRepository;
 
@@ -30,7 +29,7 @@ public class EmbeddedRedisTest {
     }
 
     @Test
-    public void save_and_find_userPoint() {
+    public void test_save_and_find_userPoint() {
         //given
         String id = "testUser1";
         LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);
@@ -52,7 +51,7 @@ public class EmbeddedRedisTest {
     }
 
     @Test
-    public void update_userPoint() {
+    public void test_update_userPoint() {
         //given
         String id = "testUser2";
         LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);
@@ -77,7 +76,7 @@ public class EmbeddedRedisTest {
     }
 
     @Test
-    public void delete_userPoint() {
+    public void test_delete_userPoint() {
         //given
         String id = "testUser3";
         LocalDateTime refreshTime = LocalDateTime.of(2020, 3, 9, 0, 0);

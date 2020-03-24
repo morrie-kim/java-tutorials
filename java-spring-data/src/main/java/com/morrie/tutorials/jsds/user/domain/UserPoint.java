@@ -1,5 +1,9 @@
 package com.morrie.tutorials.jsds.user.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.morrie.tutorials.jsds.common.serializer.CustomLocalDateTimeDeserializer;
+import com.morrie.tutorials.jsds.common.serializer.CustomLocalDateTimeSerializer;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
@@ -17,7 +21,10 @@ public class UserPoint implements Serializable {
     @Id
     private String id;
     private Long amount;
-    private LocalDateTime refreshTime;
+
+    @JsonSerialize(using = CustomLocalDateTimeSerializer.class)
+    @JsonDeserialize(using = CustomLocalDateTimeDeserializer.class)
+    protected LocalDateTime refreshTime;
 
     @Builder
     public UserPoint(String id, Long amount, LocalDateTime refreshTime) {
