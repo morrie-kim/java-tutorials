@@ -68,6 +68,7 @@ public class UserPointControllerTest {
         );
 
 
+        // then
         String responseContent = result.andExpect(status().is2xxSuccessful())
               .andDo(print())
               .andReturn().getResponse().getContentAsString()

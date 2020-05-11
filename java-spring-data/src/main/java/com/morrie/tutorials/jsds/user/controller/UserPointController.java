@@ -3,8 +3,8 @@ package com.morrie.tutorials.jsds.user.controller;
 import com.morrie.tutorials.jsds.user.domain.UserPoint;
 import com.morrie.tutorials.jsds.user.dto.UserPointDto;
 import com.morrie.tutorials.jsds.user.service.UserPointService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +18,11 @@ import java.util.Optional;
  */
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/users")
 public class UserPointController {
-    @Autowired
-    private UserPointService userPointService;
+
+    private final UserPointService userPointService;
 
     @GetMapping("/v1/point")
     public ResponseEntity<List<UserPoint>> findUserListPoint() {
