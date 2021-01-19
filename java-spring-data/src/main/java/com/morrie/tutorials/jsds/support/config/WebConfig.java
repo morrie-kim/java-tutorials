@@ -22,7 +22,7 @@ import java.util.List;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Value("${application.api-info.version.major}")
+    @Value("${application.info.version.major}")
     private String majorVersion;
 
     private final String[] defaultOrigins = {

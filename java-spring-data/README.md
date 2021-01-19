@@ -7,5 +7,8 @@ Java Spring Data 기반 Guide
 - Lettuce
 - Embedded Redis(it.ozimov.embedded-redis)
 
+## Swagger URL
+http://localhost:9980/swagger-ui/index.html
+
 ### Reference
 - https://jojoldu.tistory.com/297

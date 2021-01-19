@@ -50,8 +50,9 @@ spring:
 #    dispatch-options-request: true
 
 application:
-  api-info:
+  info:
     name: ${spring.application.name}
+    base-package: com.morrie.tutorials.jsds
     version:
       major: "v1"
       full: "v1.0.0"
