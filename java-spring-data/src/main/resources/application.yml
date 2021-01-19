@@ -46,6 +46,16 @@ spring:
     host: localhost
     port: 6379
 
+#  mvc:
+#    dispatch-options-request: true
+
+application:
+  api-info:
+    name: ${spring.application.name}
+    version:
+      major: "v1"
+      full: "v1.0.0"
+
 server:
   port: 9980
 

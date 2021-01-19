@@ -19,26 +19,26 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/users")
+@RequestMapping("/${application.api-info.version.major:v1}/users")
 public class UserPointController {
 
     private final UserPointService userPointService;
 
-    @GetMapping("/v1/point")
+    @GetMapping("/point")
     public ResponseEntity<List<UserPoint>> findUserListPoint() {
         List<UserPoint> response = userPointService.findAll();
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/v1/point/{id}")
+    @GetMapping("/point/{id}")
     public ResponseEntity<Optional<UserPoint>> findUserPoint(@PathVariable("id") String userId) {
         Optional<UserPoint> response = userPointService.findById(userId);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/v1/point")
+    @PostMapping("/point")
     public ResponseEntity<UserPoint> saveUserPoint(@RequestBody UserPointDto request) {
         UserPoint userPoint = UserPoint.builder()
                 .id(request.getUserId())

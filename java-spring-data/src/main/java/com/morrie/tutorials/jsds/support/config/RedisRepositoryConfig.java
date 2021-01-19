@@ -1,4 +1,4 @@
-package com.morrie.tutorials.jsds.common.config;
+package com.morrie.tutorials.jsds.support.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

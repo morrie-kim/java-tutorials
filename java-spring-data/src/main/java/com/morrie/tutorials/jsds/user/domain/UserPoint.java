@@ -2,8 +2,8 @@ package com.morrie.tutorials.jsds.user.domain;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.morrie.tutorials.jsds.common.serializer.CustomLocalDateTimeDeserializer;
-import com.morrie.tutorials.jsds.common.serializer.CustomLocalDateTimeSerializer;
+import com.morrie.tutorials.jsds.support.serializer.CustomLocalDateTimeDeserializer;
+import com.morrie.tutorials.jsds.support.serializer.CustomLocalDateTimeSerializer;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;

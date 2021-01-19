@@ -1,4 +1,4 @@
-package com.morrie.tutorials.jsds.common.config;
+package com.morrie.tutorials.jsds.support.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
