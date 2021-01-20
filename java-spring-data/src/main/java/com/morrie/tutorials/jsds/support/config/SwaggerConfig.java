@@ -43,7 +43,7 @@ public class SwaggerConfig {
                 .groupName(appTitle)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage(appBasePackage))
-                .paths(PathSelectors.regex(".*?"))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(
                         new ApiInfoBuilder()
