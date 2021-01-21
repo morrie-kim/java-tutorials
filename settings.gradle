@@ -7,4 +7,5 @@ pluginManagement {
 rootProject.name = 'root-multi-module'
 include 'java-spring-data'
 include 'java-spring-kafka'
+include 'java-spring-security'
 

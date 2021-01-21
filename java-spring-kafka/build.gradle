@@ -2,9 +2,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 //    implementation 'org.springframework.boot:spring-boot-starter-mustache'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
 //    implementation 'org.apache.kafka:kafka-streams'
 //    implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
 
     runtimeOnly 'com.h2database:h2'
 

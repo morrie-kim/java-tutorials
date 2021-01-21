@@ -37,3 +37,6 @@ project(':java-spring-data') {
 
 project(':java-spring-kafka') {
 }
+
+project(':java-spring-security') {
+}

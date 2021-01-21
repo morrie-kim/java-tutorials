@@ -1,0 +1,65 @@
+
+spring:
+  application:
+    name: Java Spring Kafka Service
+
+  profiles:
+    active: local
+
+  datasource:
+    url: jdbc:h2:mem:jsks;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    initialization-mode: embedded
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    use_sql_comments: true
+    format_sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.format_sql: true
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Seoul
+
+  h2:
+    console:
+      enabled: true
+      path: /jsks-console
+
+  thymeleaf:
+    prefix: classpath:templates/
+    check-template-location: true
+    suffix: .html
+    mode: HTML5
+    cache: false
+    order: 0
+
+#  mvc:
+#    dispatch-options-request: true
+
+application:
+  info:
+    name: ${spring.application.name}
+    base-package: com.morrie.tutorials.jsks
+    version:
+      major: "v1"
+      full: "v1.0.0"
+
+server:
+  port: 9980
+
+logging:
+  config: classpath:logback.xml
+  level:
+    org.springframework: INFO
+    org.hibernate: INFO
+    springfox.documentation: INFO
+    com.zaxxer: INFO
