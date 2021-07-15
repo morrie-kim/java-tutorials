@@ -1,8 +1,8 @@
 package com.morrie.tutorials.jsds.support.advice;
 
 import com.morrie.tutorials.jsds.common.dto.CommonErrorResponse;
-import com.morrie.tutorials.jsds.support.Exception.BadRequestException;
-import com.morrie.tutorials.jsds.support.Exception.InternalServerErrorException;
+import com.morrie.tutorials.jsds.support.exception.BadRequestException;
+import com.morrie.tutorials.jsds.support.exception.InternalServerErrorException;
 import com.morrie.tutorials.jsds.support.code.ExceptionCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

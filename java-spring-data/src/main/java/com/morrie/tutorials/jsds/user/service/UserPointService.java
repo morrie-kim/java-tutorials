@@ -9,7 +9,6 @@ import java.util.Optional;
 /**
  * Created by morrie kim on 2020/03/12.
  */
-@Service
 public interface UserPointService {
     Optional<UserPoint> findById(String id);
 

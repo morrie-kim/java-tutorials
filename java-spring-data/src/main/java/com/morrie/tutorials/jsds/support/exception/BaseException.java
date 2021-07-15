@@ -1,4 +1,4 @@
-package com.morrie.tutorials.jsds.support.Exception;
+package com.morrie.tutorials.jsds.support.exception;
 
 import com.morrie.tutorials.jsds.support.code.ExceptionCode;
 

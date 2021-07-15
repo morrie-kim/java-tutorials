@@ -10,5 +10,14 @@ Java Spring Data 기반 Guide
 ## Swagger URL
 http://localhost:9980/swagger-ui/index.html
 
+## Redis Master Slave - Setup
+Docker 실행
+
+Redis Master Slave 실
+
+    docker-compose up master slave-a slave-b redis-commander
+
+
 ### Reference
 - https://jojoldu.tistory.com/297
+행
