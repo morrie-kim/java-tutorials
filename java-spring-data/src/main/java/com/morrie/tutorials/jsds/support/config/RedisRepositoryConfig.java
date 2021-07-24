@@ -29,7 +29,7 @@ public class RedisRepositoryConfig {
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
         LettuceClientConfiguration clientConfig = LettuceClientConfiguration.builder()
-                .readFrom(ReadFrom.REPLICA_PREFERRED)
+                .readFrom(ReadFrom.REPLICA_PREFERRED) // Lettuce 4.4 version, SLAVE_PREFERRED Option is DEPRECATED
                 .build();
 
         RedisStaticMasterReplicaConfiguration staticMasterReplicaConfiguration = new RedisStaticMasterReplicaConfiguration(properties.getMaster().getHost(), properties.getMaster().getPort());
