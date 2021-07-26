@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * Created by morrie kim on 2020/03/09.
  */
 @Getter
-@RedisHash("userpoint")
+@RedisHash("userPoint")
 public class UserPoint implements Serializable {
     @Id
     private String id;

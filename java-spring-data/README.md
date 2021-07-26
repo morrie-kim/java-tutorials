@@ -13,11 +13,15 @@ http://localhost:9980/swagger-ui/index.html
 ## Redis Master Slave - Setup
 Docker 실행
 
-Redis Master Slave 실
+Redis Master Slave 실행
 
     docker-compose up master slave-a slave-b redis-commander
+
+## Embedded Redis usage example
+
+    127.0.0.1:6379> hget userAuthentication:test1 status
+    "done"
 
 
 ### Reference
 - https://jojoldu.tistory.com/297
-행

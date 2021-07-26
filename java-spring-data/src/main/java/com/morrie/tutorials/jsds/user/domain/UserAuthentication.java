@@ -11,7 +11,7 @@ import java.io.Serializable;
  * Created by morrie kim on 2021/07/26.
  */
 @Getter
-@RedisHash("userpoint")
+@RedisHash("userAuthentication")
 public class UserAuthentication implements Serializable {
     @Id
     private String id;
