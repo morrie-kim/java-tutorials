@@ -40,7 +40,7 @@ services:
       context: .
       dockerfile: dockerfile
     volumes:
-    - ./mongoRepl/mongo1:/data/db
+    - /Users/morriekim/00.work/mongoRepl/mongo1:/data/db
     ports:
     - "27021:27017"
     networks:
@@ -52,7 +52,7 @@ services:
     ports:
     - "27022:27017"
     volumes:
-    - ./mongoRepl/mongo2:/data/db
+    - /Users/morriekim/00.work/mongoRepl/mongo2:/data/db
     networks:
     - mongo-networks
     command: mongod --replSet replication
@@ -64,7 +64,7 @@ services:
     ports:
     - "27023:27017"
     volumes:
-    - ./mongoRepl/mongo3:/data/db
+    - /Users/morriekim/00.work/mongoRepl/mongo3:/data/db
     networks:
     - mongo-networks
     command: mongod --replSet replication
