@@ -35,6 +35,12 @@ subprojects {
 project(':java-spring-data') {
 }
 
+project(':java-spring-data-redis') {
+}
+
+project(':java-spring-data-mongo') {
+}
+
 project(':java-spring-kafka') {
 }
 

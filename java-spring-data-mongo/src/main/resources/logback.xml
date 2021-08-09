@@ -12,10 +12,10 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/jsdrs.log</file>
+        <file>logs/jsdms.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 하루에 로그파일이 한개씩 생성 -->
-            <fileNamePattern>logs/jsds-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logs/jsdms-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>

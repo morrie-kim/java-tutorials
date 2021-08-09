@@ -15,7 +15,7 @@
         <file>logs/jsdrs.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 하루에 로그파일이 한개씩 생성 -->
-            <fileNamePattern>logs/jsds-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logs/jsdrs-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>
@@ -24,7 +24,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.morrie.tutorials.jsds" level="DEBUG" />
+    <logger name="com.morrie.tutorials.jsdrs" level="DEBUG" />
 
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
