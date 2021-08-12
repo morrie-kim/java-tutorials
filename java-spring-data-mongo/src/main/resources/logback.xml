@@ -24,7 +24,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.morrie.tutorials.jsds" level="DEBUG" />
+    <logger name="com.morrie.tutorials.jsdms" level="DEBUG" />
 
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>

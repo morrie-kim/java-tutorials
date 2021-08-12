@@ -84,7 +84,7 @@ public class MongoRepositoryConfig extends AbstractMongoClientConfiguration {
         }
         else {
             // required by spring-data to re-throw server exception on the client end
-            mongoTemplate.setWriteConcern(WriteConcern.SAFE);
+            mongoTemplate.setWriteConcern(WriteConcern.ACKNOWLEDGED);
         }
         return mongoTemplate;
     }

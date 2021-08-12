@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +43,6 @@ public class UserPointController {
         UserPoint userPoint = UserPoint.builder()
                 .id(request.getUserId())
                 .amount(request.getAmount())
-                .refreshTime(LocalDateTime.now())
                 .build();
 
         UserPoint response = userPointService.save(userPoint);

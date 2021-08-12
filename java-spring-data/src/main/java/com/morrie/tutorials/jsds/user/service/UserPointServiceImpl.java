@@ -1,7 +1,7 @@
 package com.morrie.tutorials.jsds.user.service;
 
 import com.morrie.tutorials.jsds.user.domain.UserPoint;
-import com.morrie.tutorials.jsds.user.repository.UserPointRedisRepository;
+import com.morrie.tutorials.jsds.user.repository.UserPointRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +15,19 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserPointServiceImpl implements UserPointService{
 
-    private final UserPointRedisRepository userPointRedisRepository;
+    private final UserPointRepository userPointRepository;
 
     @Override
     public Optional<UserPoint> findById(String id) {
-        return userPointRedisRepository.findById(id);
+        return userPointRepository.findById(id);
     }
 
     @Override
     public List<UserPoint> findAll() {
-        return (List<UserPoint>) userPointRedisRepository.findAll();
+        return (List<UserPoint>) userPointRepository.findAll();
     }
 
     public UserPoint save(UserPoint userPoint) {
-        return userPointRedisRepository.save(userPoint);
+        return userPointRepository.save(userPoint);
     }
 }

@@ -48,7 +48,6 @@ public class UserPointControllerTest {
             UserPoint userPoint = UserPoint.builder()
                     .id("testController" + String.valueOf(i + 1))
                     .amount((long) (i + 1))
-                    .refreshTime(LocalDateTime.now())
                     .build();
 
             userPointList.add(userPoint);
@@ -60,12 +59,10 @@ public class UserPointControllerTest {
         // when
         ObjectMapper mapper = new ObjectMapper();
 
-        ResultActions result = this.mvc.perform(get("/api/users/v1/point")
+        ResultActions result = this.mvc.perform(get("/v1/users/point")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                //.content(mapper.writeValueAsString(userPointList))
                 .accept(MediaType.APPLICATION_JSON_VALUE)
         );
-
 
         // then
         String responseContent = result.andExpect(status().is2xxSuccessful())

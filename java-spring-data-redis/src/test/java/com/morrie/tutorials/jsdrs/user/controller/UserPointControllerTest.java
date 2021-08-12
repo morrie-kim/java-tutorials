@@ -61,7 +61,7 @@ public class UserPointControllerTest {
         // when
         ObjectMapper mapper = new ObjectMapper();
 
-        ResultActions result = this.mvc.perform(get("/api/users/v1/point")
+        ResultActions result = this.mvc.perform(get("/v1/users/point")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 //.content(mapper.writeValueAsString(userPointList))
                 .accept(MediaType.APPLICATION_JSON_VALUE)

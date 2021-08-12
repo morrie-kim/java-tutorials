@@ -42,16 +42,6 @@ spring:
     cache: false
     order: 0
 
-  redis:
-    master:
-      host: 127.0.0.1
-      port: 6379
-    slaves:
-    - host: 127.0.0.1
-      port: 7000
-    - host: 127.0.0.1
-      port: 7001
-
 #  mvc:
 #    dispatch-options-request: true
 
